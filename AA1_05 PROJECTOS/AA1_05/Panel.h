@@ -3,12 +3,12 @@
 
 struct panel
 {
-	Bola panel;
-	int size; 
+	Ball *panel;
+	int  size; 
 
 	void init(); 
-	void insert(int position, Bola ball);
-	int  verifier(int position, Bola ball); 
+	void insert(int position, Ball ball);
+	int  verifier(int position, Ball ball); 
 	void deleteThree(int position); 
 	void insertThree(); 
 	void printPanel(); 

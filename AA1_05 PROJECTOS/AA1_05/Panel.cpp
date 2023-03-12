@@ -2,27 +2,35 @@
 #include"Panel.h"
 #include"Player.h"
 
-void init()
+void panel::init()
 {
+	//inicializa el panel con un numero aleatorio de bolas aleatorias que es leido del estandar input
+	int a; 
+	std::cout << " which mas length of the panel?" << std::endl; 
+	std::cin >> a; 
+	
+	size = randomNumber(1, a); 
+	panel = new Ball[size];
 
+	
 }
-void insert(int position, Bola ball); //no se porque esta en verdecita XD 
+void panel::insert(int position, Ball ball)
 {
-	int p; 
+	panel[position] = ball; 
 }
-int verifier(int position, Bola ball);
+int panel::verifier(int position, Ball ball)
 {
 	return 0; 
 }
-void deleteThree(int position) 
+void panel::deleteThree(int position) 
 {
 
 }
-void insertThree()
+void panel::insertThree()
 {
 
 }
-void printPanel()
+void panel::printPanel()
 {
 
 }

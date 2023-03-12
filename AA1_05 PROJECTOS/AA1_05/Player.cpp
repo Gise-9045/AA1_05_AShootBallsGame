@@ -5,7 +5,7 @@ void init(std::string name, int position)
 {
 
 }
-Bola shoot()
+Ball shoot()
 {
 
 }

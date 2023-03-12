@@ -3,7 +3,7 @@
 
 struct gun
 {
-	Bola balas; 
+	Ball balas; 
 };
 
 struct player
@@ -13,5 +13,5 @@ struct player
 	gun pistola[50]; 
 
 	void init(std::string name, int position);
-	Bola shoot(); 
+	Ball shoot(); 
 };

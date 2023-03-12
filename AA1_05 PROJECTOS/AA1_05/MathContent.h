@@ -6,4 +6,4 @@
 
 #pragma once
 
-enum Bola { ROJO, LILA, AZUL, VERDE, AMARILLO };
+enum Ball { ROJO, LILA, AZUL, VERDE, AMARILLO };
