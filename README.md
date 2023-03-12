@@ -19,39 +19,39 @@ bolas del panel y el juego genera 3 bolas nuevas de color aleatorio insertándol
 
 2. Implementar un struct Player. La implementación debe incluir:
 
-  a. Todos los miembros (atributos) necesarios para mantener la información de un jugador. Es especialmente
-  importante pensar en cómo se representa a la pistola.
+    a. Todos los miembros (atributos) necesarios para mantener la información de un jugador. Es especialmente
+    importante pensar en cómo se representa a la pistola.
 
-  b. Un método void init(std::string name, int position), que inicializa al jugador poniéndole
-  como su identificador a name y colocándolo en la position dada, inicializa el score en 0 y carga a la
-  pistola con 20 bolas aleatorias.
+    b. Un método void init(std::string name, int position), que inicializa al jugador poniéndole
+    como su identificador a name y colocándolo en la position dada, inicializa el score en 0 y carga a la
+    pistola con 20 bolas aleatorias.
   
-  c. Un método Ball shoot(): Dispara 1 bola, la primera que tiene. La bola se elimina del cargador y la
-  función la devuelve.
+    c. Un método Ball shoot(): Dispara 1 bola, la primera que tiene. La bola se elimina del cargador y la
+    función la devuelve.
   
 3. Implementar el struct Panel. La implementación debe incluir:
   
-  a. Atributos(campos)
-      Ball *panel;
-      int size; //representa en todo momento el tamaño del panel
+    a. Atributos(campos)
+        Ball *panel;
+        int size; //representa en todo momento el tamaño del panel
 
-  b. El método void init(): Inicializa al panel con un número aleatorio de bolas aleatorias que es leído
-  del estándar input.
+    b. El método void init(): Inicializa al panel con un número aleatorio de bolas aleatorias que es leído
+    del estándar input.
 
-  c. El método void insert(int position, Ball ball): Inserta la bola ball en el panel de bolas
-  en la posición indicada. La inserción la realiza desplazando a derecha las bolas.
+    c. El método void insert(int position, Ball ball): Inserta la bola ball en el panel de bolas
+    en la posición indicada. La inserción la realiza desplazando a derecha las bolas.
 
-  d. El metodo int verifier(int position, Ball ball): Verifica si alrededor de la position
-  hay una secuencia de 3 bolas consecutivas iguales a ball. Debe retornar un valor que indique dónde está
-  la primera bola de las 3, en caso de existir 3. Si no hay 3 consecutivas, el valor de retorno lo debe indicar
-  de alguna manera.
+    d. El metodo int verifier(int position, Ball ball): Verifica si alrededor de la position
+    hay una secuencia de 3 bolas consecutivas iguales a ball. Debe retornar un valor que indique dónde está
+    la primera bola de las 3, en caso de existir 3. Si no hay 3 consecutivas, el valor de retorno lo debe indicar
+    de alguna manera.
 
-  e. El método void deleteThree(int position): Elimina 3 bolas consecutivas del panel a partir de la
-  position dada.
+    e. El método void deleteThree(int position): Elimina 3 bolas consecutivas del panel a partir de la
+    position dada.
 
-  f. El método void insertThree(): Inserta 3 bolas aleatorias en el panel por el final.
+    f. El método void insertThree(): Inserta 3 bolas aleatorias en el panel por el final.
 
-  g. Un método que imprima las bolas que hay en el panel.
+    g. Un método que imprima las bolas que hay en el panel.
 
 4. Implementar un main con el game loop. Decida cómo deben ser los inputs para jugar. El juego acaba cuando el
 cargador del jugador se vacía.
