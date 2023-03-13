@@ -1,11 +1,11 @@
 #include"MathContent.h"
 #include"Player.h"
 
-void init(std::string name, int position)
+void player::init(std::string name, int position)
 {
 
 }
-Ball shoot()
+Ball player::shoot()
 {
 
 }

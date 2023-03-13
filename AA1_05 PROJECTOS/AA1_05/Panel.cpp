@@ -12,24 +12,28 @@ void panel::init()
 	size = randomNumber(1, a); 
 	panel = new Ball[size];
 
-	
 }
+
 void panel::insert(int position, Ball ball)
 {
 	panel[position] = ball; 
 }
+
 int panel::verifier(int position, Ball ball)
 {
 	return 0; 
 }
+
 void panel::deleteThree(int position) 
 {
 
 }
+
 void panel::insertThree()
 {
 
 }
+
 void panel::printPanel()
 {
 
