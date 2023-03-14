@@ -4,7 +4,9 @@
 struct panel
 {
 	Ball *panel;
-	int  size; 
+	int  size;
+
+	player player; 
 
 	void init(); 
 	void insert(int position, Ball ball);
