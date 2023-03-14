@@ -36,7 +36,6 @@ Ball player::shoot()
 			pistola[i] = randomType(); 
 		}
 	}
-
 	return bala;
 }
 

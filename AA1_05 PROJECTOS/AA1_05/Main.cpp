@@ -9,14 +9,10 @@ int main()
 
 	player1.init(player1.nombre, player1.posicion);
 
-	/*int tamañanocargador = 50;
-	int* size = new int[tamañanocargador];
-
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i < 3; i++)
 	{
-		size[i] = randomNumber(0, 5); 
-		std::cout << size[i]; 
-	}*/
+		player1.shoot();
+	}
 
 	srand(time(NULL));
 }
