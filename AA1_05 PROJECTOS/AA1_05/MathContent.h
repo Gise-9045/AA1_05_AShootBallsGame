@@ -4,6 +4,6 @@
 
 #pragma once
 
-enum class Ball { ROJO, LILA, AZUL, VERDE, AMARILLO };
+enum class Ball { RED, LILA, BLUE, GREEN, YELLOW };
 
 int randomNumber(int min, int max);

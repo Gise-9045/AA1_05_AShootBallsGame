@@ -1,17 +1,18 @@
 #include"MathContent.h"
 #pragma once
 
-struct gun
-{
-	Ball balas; 
-};
-
 struct player
 {
+	
 	int posicion; 
 	int score;
-	gun pistola[50]; 
+	Ball pistola[50]; 
+
+	std::string nombre;
+	int contadorBalas = 0;
 
 	void init(std::string name, int position);
 	Ball shoot(); 
 };
+
+Ball randomType();
