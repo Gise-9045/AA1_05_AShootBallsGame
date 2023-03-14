@@ -6,7 +6,7 @@ struct panel
 	Ball *panel;
 	int  size;
 
-	player player; 
+	player; 
 
 	void init(); 
 	void insert(int position, Ball ball);

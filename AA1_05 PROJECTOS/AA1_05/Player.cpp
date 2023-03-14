@@ -26,7 +26,18 @@ Ball player::shoot()
 	/*Dispara 1 bola, la primera que tiene. La bola se elimina del cargador y la
 	función la devuelve*/
 
-	return Ball::RED;
+	Ball bala = pistola[0]; 
+
+	for (int i = 0; i < 20; i++)
+	{
+		pistola[i] = pistola[i + 1]; 
+		if (i == 19)
+		{
+			pistola[i] = randomType(); 
+		}
+	}
+
+	return bala;
 }
 
 Ball randomType()
