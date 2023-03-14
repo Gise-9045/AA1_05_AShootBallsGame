@@ -6,13 +6,11 @@ void player::init(std::string name, int position)
 
 	std::cout << "Insert a name for your avatar:"; 
 	std::cin >> name ; 
+	nombre = name;
 
 
 	std::cout << std::endl << "In which position do you want to start:";
 	std::cin >> position;
-
-	nombre = name; 
-
 	posicion = position; 
 
 	score = 0; 
