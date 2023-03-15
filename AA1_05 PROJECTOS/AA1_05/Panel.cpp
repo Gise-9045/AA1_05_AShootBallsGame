@@ -4,13 +4,25 @@
 
 void panel::init()
 {
-	//inicializa el panel con un numero aleatorio de bolas aleatorias que es leido del estandar input
-	int a; 
-	std::cout << " which mas length of the panel?" << std::endl; 
-	std::cin >> a; 
+	int a = 0;
+	//inicializa el panel con un numero aleatorio de bolas aleatorias que es leido del estandar input 
+	std::cout << " which is the length of the panel?" << std::endl; 
+	std::cin >> size; 
 	
-	size = randomNumber(1, a); 
 	panel = new Ball[size];
+
+	while (a < size)
+	{
+		if (a >= 3 && panel[a - 2] == panel[a - 1] && panel[a - 1] == panel[a])
+		{
+			panel[a] = randomType();
+		}
+		else
+		{
+			panel[a] = randomType();
+			a++;
+		}
+	}
 
 }
 
@@ -31,10 +43,37 @@ void panel::deleteThree(int position)
 
 void panel::insertThree()
 {
-
+	
 }
 
 void panel::printPanel()
 {
+	for (int i = 0; i < size; i++)
+	{
+		printType(panel, i);
+	}
+}
 
+void printType(Ball tablero[], int tamaño)
+{
+	switch (tablero[tamaño])
+	{
+	case Ball::RED:
+		std::cout << "R ";
+		break; 
+	case Ball::LILA: 
+		std::cout << "L ";
+		break;
+	case Ball::BLUE:
+		std::cout << "B "; 
+		break; 
+	case Ball::GREEN: 
+		std::cout << "G "; 
+		break; 
+	case Ball::YELLOW: 
+		std::cout << "Y "; 
+		break; 
+	default: 
+		break; 
+	}
 }

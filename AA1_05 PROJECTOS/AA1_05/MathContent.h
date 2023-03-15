@@ -6,4 +6,6 @@
 
 enum class Ball { RED, LILA, BLUE, GREEN, YELLOW };
 
+// int, float, 
+
 int randomNumber(int min, int max);

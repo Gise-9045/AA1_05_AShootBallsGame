@@ -6,7 +6,7 @@ struct player
 	
 	int posicion; 
 	int score;
-	Ball pistola[50]; 
+	Ball pistola[50];
 
 	std::string nombre;
 	int contadorBalas = 0;
@@ -16,3 +16,5 @@ struct player
 };
 
 Ball randomType();
+
+void printType(Ball tablero[], int tamaño); 

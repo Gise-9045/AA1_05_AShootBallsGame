@@ -7,12 +7,17 @@ int main()
 	//implementar un GAMELOOP , el juego termina cuando no hay más balas 
 	player player1; 
 
-	player1.init(player1.nombre, player1.posicion);
+	//player1.init(player1.nombre, player1.posicion);
 
-	for (int i = 0; i < 3; i++)
-	{
-		player1.shoot();
-	}
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	player1.shoot();
+	//}
+
+	panel mapa; 
+
+	mapa.init(); 
+	mapa.printPanel(); 
 
 	srand(time(NULL));
 }

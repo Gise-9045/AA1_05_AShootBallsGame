@@ -41,26 +41,31 @@ Ball player::shoot()
 
 Ball randomType()
 {
-	int result = randomNumber(0, 4); 
+	int result = randomNumber(0, 4);
+	
+
 	switch (result)
 	{
-	case 0: 
+	case 0:
 		return Ball::RED;
-		break; 
-	case 1:
-		return Ball::LILA; 
 		break;
-	case 2: 
-		return Ball::BLUE; 
-		break; 
-	case 3: 
-		return Ball::GREEN; 
-		break; 
-	case 4: 
+	case 1:
+		return Ball::LILA;
+		break;
+	case 2:
+		return Ball::BLUE;
+		break;
+	case 3:
+		return Ball::GREEN;
+		break;
+	case 4:
 		return Ball::YELLOW;
-		break; 
+		break;
 	default:
 		break;
-	}
+	}; 
 }
 
+//(ball bolas[], size)
+
+//switch(bola[size])
