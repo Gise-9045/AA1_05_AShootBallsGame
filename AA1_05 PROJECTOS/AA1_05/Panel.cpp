@@ -13,15 +13,13 @@ void panel::init()
 
 	while (a < size)
 	{
-		if (a >= 3 && panel[a - 2] == panel[a - 1] && panel[a - 1] == panel[a])
+		panel[a] = randomType();
+
+		if (panel[a] != panel[a - 1] && panel[a] != panel[a - 2])
 		{
-			panel[a] = randomType();
-		}
-		else
-		{
-			panel[a] = randomType();
 			a++;
 		}
+
 	}
 
 }

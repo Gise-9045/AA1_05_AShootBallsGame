@@ -4,6 +4,7 @@
 
 int main()
 {
+	srand(time(NULL));
 	//implementar un GAMELOOP , el juego termina cuando no hay más balas 
 	player player1; 
 
@@ -19,5 +20,5 @@ int main()
 	mapa.init(); 
 	mapa.printPanel(); 
 
-	srand(time(NULL));
+	
 }
