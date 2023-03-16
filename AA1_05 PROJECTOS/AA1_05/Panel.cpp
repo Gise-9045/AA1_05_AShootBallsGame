@@ -45,11 +45,11 @@ void panel::insert(int position, Ball ball)
 	//Hace el volcado de panelHelper a panel
 	//Cuando se encuentra con la posición donde ha metido la bala, mete la bala en vez del volcado
 	//Utilizo dos variables (pPosition y phPosition) por que si solo utilizó size, llegará un momento en el que panelHelper se pasa del maximo
-	for (int i = 0; i < size - 1; i++)
+	for (int i = 0; i < size; i++)
 	{
 		if (i == position)
 		{
-			panel[pPosition] = ball; //Aquí va la bala (NO SE SI ESTÁ BIEN)
+			panel[pPosition] = ball; //Aquí va la bala
 			pPosition++;
 		}
 		else
@@ -69,10 +69,10 @@ int panel::verifier(int position, Ball ball)
 
 	for (int i = 0; i < size - 3; i++)
 	{
-		if (panel[i] == panel[i + 1] && panel[i] == panel[i + 2])
+		if (size >= 3 && panel[i] == panel[i - 1] && panel[i] == panel[i - 2])
 		{
 			//Si detecta 3 consecutivas cambia -1 por la posición
-			position = i;
+			position = i - 2;
 		}
 	}
 
@@ -81,19 +81,74 @@ int panel::verifier(int position, Ball ball)
 
 void panel::deleteThree(int position) 
 {
+	int pPosition = 0; //PanelPosition
+	int phPosition = 0; //Panelhelper Position
+
 	//Crea una array para volcar todo lo que hay en panel
-	//POR ACABAR
 	Ball* panelHelper = new Ball[size];
 
 	for (int i = 0; i < size; i++)
 	{
 		panelHelper[i] = panel[i];
 	}
+
+	delete[] panel;
+	size -= 3;
+
+	panel = new Ball[size];
+
+	//Vuelve a volcarlo a la array original pero quitando las bolas repetidas
+	for (int i = 0; i < size; i++)
+	{
+		if (i == position)
+		{
+			phPosition += 3;
+		}
+		else
+		{
+			panel[pPosition] = panelHelper[phPosition];
+
+			pPosition++;
+			phPosition++;
+		}
+	}
+
 }
 
 void panel::insertThree()
 {
-	
+	int a = size;
+
+	//Crea una array para volcar todo lo que hay en panel
+	Ball* panelHelper = new Ball[size];
+
+	for (int i = 0; i < size; i++)
+	{
+		panelHelper[i] = panel[i];
+	}
+
+	delete[] panel;
+	size += 3;
+
+	panel = new Ball[size];
+
+	for (int i = 0; i < size - 3; i++)
+	{
+		panel[i] = panelHelper[i];
+	}
+
+	//Pone 3 bolas aleatorias al final
+	while (a < size)
+	{
+		panel[a] = randomType();
+
+		if (!((panel[a] == panel[a - 1]) && (panel[a] == panel[a - 2])))
+		{
+			a++;
+		}
+	}
+
+
 }
 
 void panel::printPanel()
