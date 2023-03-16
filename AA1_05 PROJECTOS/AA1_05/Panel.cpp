@@ -6,8 +6,9 @@ void panel::init()
 {
 	int a = 0;
 	//inicializa el panel con un numero aleatorio de bolas aleatorias que es leido del estandar input 
-	std::cout << " Which is the length of the panel?" << std::endl; 
+	std::cout << "Which is the length of the panel?" << std::endl; 
 	std::cin >> size; 
+	std::cout << std::endl;
 	
 	panel = new Ball[size];
 
@@ -157,6 +158,25 @@ void panel::printPanel()
 	{
 		printType(panel, i);
 	}
+
+	std::cout << std::endl << std::endl;
+
+
+
+	for (int i = 0; i < size / 2; i++)
+	{
+		std::cout << "  " << std::flush;
+	}
+	std::cout << "^" << std::flush;
+
+	for (int i = 0; i < size / 2; i++)
+	{
+		std::cout << "  " << std::flush;
+	}
+	//AQUÍ TIENE QUE IMPRIMIR QUE BOLA TIENE EL JUGADOR ACTUALMENTE
+	//printType(player::pistola, 0);
+
+	std::cout << std::endl << std::endl;
 }
 
 void printType(Ball tablero[], int tamaño)

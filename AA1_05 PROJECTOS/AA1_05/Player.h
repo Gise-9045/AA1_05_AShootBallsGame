@@ -17,4 +17,4 @@ struct player
 
 Ball randomType();
 
-void printType(Ball tablero[], int tamaño); 
+void printType(Ball tablero[], int tamaño);
