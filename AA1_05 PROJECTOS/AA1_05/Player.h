@@ -5,8 +5,11 @@ struct player
 {
 	
 	int posicion; 
-	int score;
-	Ball pistola[50];
+	int score; 
+
+	int cargador = 20; 
+
+	Ball* pistola = new Ball[cargador];  // una array de ball que puede cambiar el tamaño cuando haga shoot :) 
 
 	std::string nombre;
 	int contadorBalas = 0;

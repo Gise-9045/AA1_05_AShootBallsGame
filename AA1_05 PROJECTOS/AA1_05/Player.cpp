@@ -9,8 +9,7 @@ void player::init(std::string name, int position)
 	nombre = name;
 
 
-	std::cout << std::endl << "In which position do you want to start:";
-	std::cin >> position;
+	position = 0; 
 	posicion = position; 
 
 	score = 0; 

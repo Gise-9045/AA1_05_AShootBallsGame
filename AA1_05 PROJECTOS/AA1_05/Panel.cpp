@@ -173,8 +173,10 @@ void panel::printPanel()
 	{
 		std::cout << "  " << std::flush;
 	}
+
 	//AQUÍ TIENE QUE IMPRIMIR QUE BOLA TIENE EL JUGADOR ACTUALMENTE
 	//printType(player::pistola, 0);
+	//IMPORTANTE//
 
 	std::cout << std::endl << std::endl;
 }
