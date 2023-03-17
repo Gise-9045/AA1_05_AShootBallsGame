@@ -12,7 +12,6 @@ int main()
 
 	bool gameFinished = false;
 	int verifier = 0;
-	int addNewBalls = 0;
 	int balasQueQuedan = 20; 
 
 	player1.init(player1.nombre, player1.posicion);
@@ -25,6 +24,11 @@ int main()
 	std::cout << "In which position do you want to throw a ball?" << std::endl;
 	std::cin >> player1.posicion;
 
+	while (player1.posicion >= mapa.size)
+	{
+		std::cout << "In which position do you want to throw a ball? (less than " << mapa.size << ")" << std::endl;
+		std::cin >> player1.posicion;
+	}
 
 	system("CLS");
 
@@ -57,6 +61,12 @@ int main()
 
 		std::cout << "In which position do you want to throw a ball?" << std::endl;
 		std::cin >> player1.posicion;
+
+		while (player1.posicion >= mapa.size)
+		{
+			std::cout << "In which position do you want to throw a ball? (less than " << mapa.size << ")" << std::endl;
+			std::cin >> player1.posicion;
+		}
 
 		balasQueQuedan--;
 

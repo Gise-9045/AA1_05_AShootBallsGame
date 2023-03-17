@@ -9,7 +9,13 @@ void panel::init()
 	std::cout << "Which is the length of the panel?" << std::endl; 
 	std::cin >> size; 
 	std::cout << std::endl;
-	
+
+	while (size == 0)
+	{
+		std::cout << "Which is the length of the panel? (mora than 0 plis)" << std::endl;
+		std::cin >> size;
+	}
+
 	panel = new Ball[size];
 
 	while (a < size)
@@ -176,7 +182,7 @@ void panel::printPanel(player personaje)
 		if (i == personaje.posicion)
 		{
 			std::cout << "^" << std::endl; 
-			printType(personaje.pistola, 0);
+			printType(personaje.pistola,0);
 		}
 		
 	}
