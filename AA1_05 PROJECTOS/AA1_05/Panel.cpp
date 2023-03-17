@@ -5,8 +5,7 @@
 void panel::init()  
 {
 	int a = 0;
-	//inicializa el panel con un numero aleatorio de bolas aleatorias que es leido del estandar input 
-	
+
 	std::cout << "Which is the length of the panel?" << std::endl; 
 	std::cin >> size; 
 	std::cout << std::endl;
@@ -21,7 +20,6 @@ void panel::init()
 		{
 			a++;
 		}
-
 	}
 }
 
@@ -43,14 +41,16 @@ void panel::insert(int position, Ball ball)
 
 	panel = new Ball[size];
 
-	//Hace el volcado de panelHelper a panel
-	//Cuando se encuentra con la posición donde ha metido la bala, mete la bala en vez del volcado
-	//Utilizo dos variables (pPosition y phPosition) por que si solo utilizó size, llegará un momento en el que panelHelper se pasa del maximo
+	/*Hace el volcado de panelHelper a panel,
+	cuando se encuentra con la posición donde ha metido la bala, mete la bala en vez del volcado,
+	utilizo dos variables (pPosition y phPosition) por que si solo utilizó size, 
+	llegará un momento en el que panelHelper se pasa del maximo*/
+
 	for (int i = 0; i < size; i++)
 	{
 		if (i == position)
 		{
-			panel[pPosition] = ball; //Aquí va la bala
+			panel[pPosition] = ball;
 			pPosition++;
 		}
 		else
@@ -62,7 +62,7 @@ void panel::insert(int position, Ball ball)
 		}
 	}
 
-	delete[] panelHelper;  // se elimina esta memoria
+	delete[] panelHelper; 
 	panelHelper = nullptr;
 }
 
