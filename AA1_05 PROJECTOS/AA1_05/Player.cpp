@@ -23,9 +23,6 @@ void player::init(std::string name, int position)
 
 Ball player::shoot()
 {
-	/*Dispara 1 bola, la primera que tiene. La bola se elimina del cargador y la
-	función la devuelve*/
-
 	Ball bala = pistola[0]; 
 
 	for (int i = 0; i < cargador; i++)

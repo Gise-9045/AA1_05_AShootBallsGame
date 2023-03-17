@@ -56,9 +56,6 @@ int main()
 			break;
 		}
 
-		//BORRAR
-		std::cout << mapa.size << " main" << std::endl;
-
 		std::cout << "In which position do you want to throw a ball?" << std::endl;
 		std::cin >> player1.posicion;
 
