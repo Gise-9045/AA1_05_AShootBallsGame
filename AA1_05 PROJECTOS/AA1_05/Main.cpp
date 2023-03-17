@@ -20,6 +20,14 @@ int main()
 
 	system("CLS");
 
+	mapa.printPanel(player1);
+
+	std::cout << "In which position do you want to throw a ball?" << std::endl;
+	std::cin >> player1.posicion;
+
+
+	system("CLS");
+
 	while (!gameFinished)
 	{
 		mapa.insert(player1.posicion, player1.shoot());
@@ -44,10 +52,13 @@ int main()
 			break;
 		}
 
+		//BORRAR
+		std::cout << mapa.size << " main" << std::endl;
+
 		std::cout << "In which position do you want to throw a ball?" << std::endl;
 		std::cin >> player1.posicion;
 
-		balasQueQuedan--; 
+		balasQueQuedan--;
 
 		system("CLS");
 	}

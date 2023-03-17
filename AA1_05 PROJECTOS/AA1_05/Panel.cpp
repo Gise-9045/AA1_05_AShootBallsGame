@@ -10,8 +10,6 @@ void panel::init()
 	std::cout << "Which is the length of the panel?" << std::endl; 
 	std::cin >> size; 
 	std::cout << std::endl;
-
-	size--; 
 	
 	panel = new Ball[size];
 
@@ -64,15 +62,18 @@ void panel::insert(int position, Ball ball)
 		}
 	}
 
-	delete[] panelHelper;  // se elimina esta memoria 
+	delete[] panelHelper;  // se elimina esta memoria
+	panelHelper = nullptr;
 }
+
+
 
 int panel::verifier(int position, Ball ball)
 {
 	//Ponemos posición a - 1 para indicar que no hay 3 consecutivas
 	position = -1;
 
-	for (int i = 0; i < size - 3; i++)
+	for (int i = 0; i < size; i++)
 	{
 		if (size >= 3 && panel[i] == panel[i - 1] && panel[i] == panel[i - 2])
 		{
@@ -118,11 +119,13 @@ void panel::deleteThree(int position)
 		}
 	}
 
+	delete[] panelHelper;  // se elimina esta memoria
+	panelHelper = nullptr;
 }
 
 void panel::insertThree()
 {
-	int a = size+2;
+	int a = size;
 
 	//Crea una array para volcar todo lo que hay en panel
 	Ball* panelHelper = new Ball[size];
@@ -133,7 +136,7 @@ void panel::insertThree()
 	}
 
 	delete[] panel;
-	size += 4;
+	size += 3;
 
 	panel = new Ball[size];
 
@@ -142,7 +145,8 @@ void panel::insertThree()
 		panel[i] = panelHelper[i];
 	}
 
-	delete[]panelHelper; 
+	delete[] panelHelper;  // se elimina esta memoria
+	panelHelper = nullptr;
 
 	//Pone 3 bolas aleatorias al final
 	while (a < size)
