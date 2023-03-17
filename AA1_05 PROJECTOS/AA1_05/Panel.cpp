@@ -103,7 +103,7 @@ void panel::deleteThree(int position)
 	}
 
 	delete[] panel;
-	size -= 3;
+	size -= 2;
 
 	panel = new Ball[size];
 
