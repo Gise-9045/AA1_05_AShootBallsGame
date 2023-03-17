@@ -1,4 +1,4 @@
-#include"MathContent.h"
+ #include"MathContent.h"
 #include"Panel.h"
 #include"Player.h"
 
@@ -8,8 +8,13 @@ int main()
 
 	player player1;
 	panel mapa;
+	player1.init(player1.nombre, player1.posicion); 
+	mapa.init(); 
+	mapa.printPanel(); 
 
-	bool gameFinished = false;
+	player1.shoot(); 
+
+	/*bool gameFinished = false;
 	int verifier = 0;
 	int addNewBalls = 0;
 
@@ -80,6 +85,6 @@ int main()
 	//}
 	//mapa.printPanel();
 
-
+	*/
 	
 }

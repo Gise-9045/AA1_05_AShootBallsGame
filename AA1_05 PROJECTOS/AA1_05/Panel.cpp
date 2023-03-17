@@ -6,6 +6,7 @@ void panel::init()
 {
 	int a = 0;
 	//inicializa el panel con un numero aleatorio de bolas aleatorias que es leido del estandar input 
+	
 	std::cout << "Which is the length of the panel?" << std::endl; 
 	std::cin >> size; 
 	std::cout << std::endl;
@@ -22,7 +23,6 @@ void panel::init()
 		}
 
 	}
-
 }
 
 void panel::insert(int position, Ball ball)
@@ -61,6 +61,8 @@ void panel::insert(int position, Ball ball)
 			phPosition++;
 		}
 	}
+
+	delete[] panelHelper;  // se elimina esta memoria 
 }
 
 int panel::verifier(int position, Ball ball)
@@ -137,6 +139,8 @@ void panel::insertThree()
 	{
 		panel[i] = panelHelper[i];
 	}
+
+	delete[]panelHelper; 
 
 	//Pone 3 bolas aleatorias al final
 	while (a < size)

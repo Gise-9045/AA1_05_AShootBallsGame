@@ -14,31 +14,35 @@ void player::init(std::string name, int position)
 
 	score = 0; 
 
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i < cargador; i++)
 	{
-		pistola[i] = randomType();
+		pistola[i] = randomType();	
 	}
 }
+
 
 Ball player::shoot()
 {
 	/*Dispara 1 bola, la primera que tiene. La bola se elimina del cargador y la
 	función la devuelve*/
 
-	Ball bala = pistola[0]; 
+	Ball bala = pistola[0];
+	
+	maxCargador--;
 
-	for (int i = 0; i < 20; i++)
+	Ball* pistolaHelper = new Ball[maxCargador];
+
+	for (int i = cargador;  i > 1 ; i--)
 	{
-		pistola[i] = pistola[i + 1]; 
-		if (i == 19)
-		{
-			pistola[i] = randomType(); 
-		}
-	}
+		pistolaHelper[i] = pistola[i-1];
+	} 
+
+
 	return bala;
 }
 
-Ball randomType()
+
+Ball randomType()  // crea el tipo de bola y la devuevle la bola que toca 
 {
 	int result = randomNumber(0, 4);
 	
@@ -65,6 +69,3 @@ Ball randomType()
 	}; 
 }
 
-//(ball bolas[], size)
-
-//switch(bola[size])

@@ -6,13 +6,14 @@ struct player
 	
 	int posicion; 
 	int score; 
+	
 
-	int cargador = 20; 
+	const int cargador = 20;
+	int maxCargador = cargador;
 
-	Ball* pistola = new Ball[cargador];  // una array de ball que puede cambiar el tamaño cuando haga shoot :) 
+	Ball* pistola = new Ball[cargador];
 
 	std::string nombre;
-	int contadorBalas = 0;
 
 	void init(std::string name, int position);
 	Ball shoot(); 
