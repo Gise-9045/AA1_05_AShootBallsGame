@@ -37,7 +37,7 @@ int main()
 		mapa.insert(player1.posicion, player1.shoot());
 		verifier = mapa.verifier(player1.posicion, player1.shoot());
 
-		//Si detecta tres bolas juntas las elimina y suma un score
+	
 		if (verifier != -1)
 		{
 			mapa.deleteThree(verifier);

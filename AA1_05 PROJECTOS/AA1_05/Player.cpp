@@ -36,7 +36,7 @@ Ball player::shoot()
 }
 
 
-Ball randomType()  // crea el tipo de bola y la devuevle la bola que toca 
+Ball randomType() 
 {
 	int result = randomNumber(0, 4);
 

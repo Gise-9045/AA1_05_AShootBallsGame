@@ -107,7 +107,7 @@ void panel::deleteThree(int position)
 
 	panel = new Ball[size];
 
-	//Vuelve a volcarlo a la array original pero quitando las bolas repetidas
+	
 	for (int i = 0; i < size; i++)
 	{
 		if (i == position)
@@ -123,7 +123,7 @@ void panel::deleteThree(int position)
 		}
 	}
 
-	delete[] panelHelper;  // se elimina esta memoria
+	delete[] panelHelper; 
 	panelHelper = nullptr;
 }
 
@@ -131,7 +131,7 @@ void panel::insertThree()
 {
 	int a = size;
 
-	//Crea una array para volcar todo lo que hay en panel
+	
 	Ball* panelHelper = new Ball[size];
 
 	for (int i = 0; i < size; i++)
@@ -149,10 +149,10 @@ void panel::insertThree()
 		panel[i] = panelHelper[i];
 	}
 
-	delete[] panelHelper;  // se elimina esta memoria
+	delete[] panelHelper;  
 	panelHelper = nullptr;
 
-	//Pone 3 bolas aleatorias al final
+	
 	while (a < size)
 	{
 		panel[a] = randomType();
