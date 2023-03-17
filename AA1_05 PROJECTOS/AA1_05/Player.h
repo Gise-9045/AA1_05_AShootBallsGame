@@ -7,9 +7,8 @@ struct player
 	int posicion; 
 	int score; 
 	
-
 	const int cargador = 20;
-	int maxCargador = cargador;
+	int maxDisparos = 0;
 
 	Ball* pistola = new Ball[cargador];
 

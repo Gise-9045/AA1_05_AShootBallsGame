@@ -33,6 +33,8 @@ Ball player::shoot()
 		pistola[i] = pistola[i + 1]; 
 	}
 
+	maxDisparos++;
+
 	return bala;
 }
 

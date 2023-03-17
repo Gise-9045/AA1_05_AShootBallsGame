@@ -2,7 +2,7 @@
 #include"Panel.h"
 #include"Player.h"
 
-void panel::init()
+void panel::init()  
 {
 	int a = 0;
 	//inicializa el panel con un numero aleatorio de bolas aleatorias que es leido del estandar input 
@@ -10,6 +10,8 @@ void panel::init()
 	std::cout << "Which is the length of the panel?" << std::endl; 
 	std::cin >> size; 
 	std::cout << std::endl;
+
+	size--; 
 	
 	panel = new Ball[size];
 
@@ -120,7 +122,7 @@ void panel::deleteThree(int position)
 
 void panel::insertThree()
 {
-	int a = size;
+	int a = size+1;
 
 	//Crea una array para volcar todo lo que hay en panel
 	Ball* panelHelper = new Ball[size];
@@ -156,33 +158,25 @@ void panel::insertThree()
 
 }
 
-void panel::printPanel()
+void panel::printPanel(player personaje)
 {
 	for (int i = 0; i < size; i++)
 	{
 		printType(panel, i);
 	}
 
-	std::cout << std::endl << std::endl;
+	std::cout <<"\n\n";
 
-
-
-	for (int i = 0; i < size / 2; i++)
+	for (int i = 0; i < size; i++)
 	{
-		std::cout << "  " << std::flush;
+		if (i == personaje.posicion)
+		{
+			std::cout << "^" << std::endl; 
+			printType(personaje.pistola, 0);
+		}
+		
 	}
-	std::cout << "^" << std::flush;
-
-	for (int i = 0; i < size / 2; i++)
-	{
-		std::cout << "  " << std::flush;
-	}
-
-	//AQUÍ TIENE QUE IMPRIMIR QUE BOLA TIENE EL JUGADOR ACTUALMENTE
-	//printType(player::pistola, 0);
-	//IMPORTANTE//
-
-	std::cout << std::endl << std::endl;
+	std::cout << "\n\n"<< personaje.nombre << " score is : " << personaje.score<< "\n\n";
 }
 
 void printType(Ball tablero[], int tamaño)
