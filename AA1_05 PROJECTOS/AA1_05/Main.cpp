@@ -13,6 +13,7 @@ int main()
 	bool gameFinished = false;
 	int verifier = 0;
 	int addNewBalls = 0;
+	int balasQueQuedan = 20; 
 
 	player1.init(player1.nombre, player1.posicion);
 	mapa.init();
@@ -22,7 +23,7 @@ int main()
 	while (!gameFinished)
 	{
 		mapa.insert(player1.posicion, player1.shoot());
-		verifier = mapa.verifier(player1.posicion, player1.shoot()); //NO SE COMO MANDAR COLOR ALEATORIO//
+		verifier = mapa.verifier(player1.posicion, player1.shoot());
 
 		//Si detecta tres bolas juntas las elimina y suma un score
 		if (verifier != -1)
@@ -33,8 +34,9 @@ int main()
 		}
 
 		mapa.printPanel(player1);
+		std::cout << "You have " << balasQueQuedan << " bullets left.\n\n"; 
 
-		if (player1.maxDisparos > 20) //aguanta a 9 nos eporque 
+		if (balasQueQuedan == 0)
 		{
 			system("CLS");
 			std::cout << player1.nombre << ", your score is: " << player1.score << std::endl;
@@ -44,6 +46,8 @@ int main()
 
 		std::cout << "In which position do you want to throw a ball?" << std::endl;
 		std::cin >> player1.posicion;
+
+		balasQueQuedan--; 
 
 		system("CLS");
 	}

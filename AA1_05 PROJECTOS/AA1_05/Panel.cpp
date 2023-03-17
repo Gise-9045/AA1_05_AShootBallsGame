@@ -122,7 +122,7 @@ void panel::deleteThree(int position)
 
 void panel::insertThree()
 {
-	int a = size+1;
+	int a = size+2;
 
 	//Crea una array para volcar todo lo que hay en panel
 	Ball* panelHelper = new Ball[size];
@@ -133,7 +133,7 @@ void panel::insertThree()
 	}
 
 	delete[] panel;
-	size += 3;
+	size += 4;
 
 	panel = new Ball[size];
 
