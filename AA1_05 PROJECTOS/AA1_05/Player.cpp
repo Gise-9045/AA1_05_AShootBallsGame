@@ -25,10 +25,13 @@ Ball player::shoot()
 {
 	Ball bala = pistola[0]; 
 
-	for (int i = 0; i < cargador; i++)
+	for (int i = 1; i < cargador; i++)
 	{
-		pistola[i] = pistola[i + 1]; 
+		pistola[i-1] = pistola[i]; 
 	}
+
+	pistola[cargador - 1] = bala; 
+
 	return bala;
 }
 

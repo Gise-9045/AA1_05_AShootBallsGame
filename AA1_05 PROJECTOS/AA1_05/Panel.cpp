@@ -72,8 +72,6 @@ void panel::insert(int position, Ball ball)
 	panelHelper = nullptr;
 }
 
-
-
 int panel::verifier(int position, Ball ball)
 {
 	//Ponemos posición a - 1 para indicar que no hay 3 consecutivas
