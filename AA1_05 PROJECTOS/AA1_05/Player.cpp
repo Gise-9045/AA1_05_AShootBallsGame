@@ -26,17 +26,12 @@ Ball player::shoot()
 	/*Dispara 1 bola, la primera que tiene. La bola se elimina del cargador y la
 	función la devuelve*/
 
-	Ball bala = pistola[0];
-	
-	maxCargador--;
+	Ball bala = pistola[0]; 
 
-	Ball* pistolaHelper = new Ball[maxCargador];
-
-	for (int i = cargador;  i > 1 ; i--)
+	for (int i = 0; i < cargador; i++)
 	{
-		pistolaHelper[i] = pistola[i-1];
-	} 
-
+		pistola[i] = pistola[i + 1]; 
+	}
 
 	return bala;
 }
