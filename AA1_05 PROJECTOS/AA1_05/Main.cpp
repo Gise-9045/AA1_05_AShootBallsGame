@@ -4,7 +4,6 @@
 
 int main()
 {
-
 	srand(time(NULL));
 
 	player player1;
